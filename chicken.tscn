@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://cd5ww2lihs3bk"]
+
+[ext_resource type="Script" path="res://chicken.gd" id="1_8jxcu"]
+[ext_resource type="Texture2D" uid="uid://dnttyd440wrx6" path="res://Sprites/chicken_cooked.png" id="1_yr6kl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q4uyg"]
+radius = 9.77139
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ge4lw"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"chicken",
+"speed": 5.0
+}]
+
+[node name="Chicken" type="Area2D" groups=["Player"]]
+scale = Vector2(0.01, 0.01)
+script = ExtResource("1_8jxcu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(158.957, 129.82)
+shape = SubResource("CircleShape2D_q4uyg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ge4lw")
+animation = &"chicken"
+
+[node name="ChickenCooked" type="Sprite2D" parent="."]
+position = Vector2(-24, -52)
+texture = ExtResource("1_yr6kl")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

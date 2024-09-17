@@ -1,0 +1,125 @@
+[gd_scene load_steps=9 format=3 uid="uid://br16dt3uxdnqp"]
+
+[ext_resource type="Texture2D" uid="uid://du7w62xh3ybpk" path="res://Sprites/plx-1.png" id="1_88tnm"]
+[ext_resource type="Script" path="res://mainmenu/main_menu.gd" id="1_i0h5q"]
+[ext_resource type="Texture2D" uid="uid://cq8gbkos5752v" path="res://Sprites/plx-2.png" id="2_rtcci"]
+[ext_resource type="Texture2D" uid="uid://dvn4avhwwav6w" path="res://Sprites/plx-3.png" id="3_aeg0g"]
+[ext_resource type="Texture2D" uid="uid://bgf41jk4b3n3o" path="res://Sprites/plx-4.png" id="4_jtr35"]
+[ext_resource type="Texture2D" uid="uid://eqmf2b4rlgm8" path="res://Sprites/plx-5.png" id="5_0sshb"]
+
+[sub_resource type="SystemFont" id="SystemFont_un4lv"]
+font_names = PackedStringArray("Impact")
+
+[sub_resource type="SystemFont" id="SystemFont_cjb7h"]
+
+[node name="Main_Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i0h5q")
+
+[node name="First" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_88tnm")
+
+[node name="Second" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_rtcci")
+
+[node name="Third" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_aeg0g")
+
+[node name="Fourth" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_jtr35")
+
+[node name="Five" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_0sshb")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="Seperator" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.212305, 0.212305, 0.212305, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = SubResource("SystemFont_un4lv")
+theme_override_font_sizes/font_size = 75
+text = "Hungry Hunter
+"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="Seperator2" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Start Game" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_cjb7h")
+theme_override_font_sizes/font_size = 24
+text = "Start Game"
+
+[node name="Quit" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_cjb7h")
+theme_override_font_sizes/font_size = 24
+text = "Quit "
