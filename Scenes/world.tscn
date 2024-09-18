@@ -1505,11 +1505,11 @@ texture = ExtResource("4_re1xj")
 sources/0 = SubResource("TileSetAtlasSource_ij862")
 sources/1 = SubResource("TileSetAtlasSource_1qlxt")
 
-[node name="Player" type="Node2D" groups=["Player"]]
+[node name="World" type="Node2D" groups=["Player"]]
 z_index = 2
 metadata/_edit_vertical_guides_ = [-613.0]
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("1_i0l7e")]
+[node name="Player" parent="." instance=ExtResource("1_i0l7e")]
 z_index = 2
 position = Vector2(80, 456)
 max_jump_height = 95.0
@@ -1518,12 +1518,12 @@ max_jump_amount = 0
 max_acceleration = 8100
 friction = 60
 
-[node name="Camera2D2" type="Camera2D" parent="CharacterBody2D"]
+[node name="Camera2D2" type="Camera2D" parent="Player"]
 limit_left = 0
 limit_top = -1645
 limit_bottom = 640
 
-[node name="JungleHunger(3)" type="AudioStreamPlayer" parent="CharacterBody2D/Camera2D2"]
+[node name="JungleHunger(3)" type="AudioStreamPlayer" parent="Player/Camera2D2"]
 stream = ExtResource("2_lvsni")
 autoplay = true
 

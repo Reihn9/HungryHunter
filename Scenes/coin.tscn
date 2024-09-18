@@ -1,7 +1,8 @@
-[gd_scene load_steps=21 format=3 uid="uid://cemet411l71q5"]
+[gd_scene load_steps=22 format=3 uid="uid://cemet411l71q5"]
 
 [ext_resource type="Script" path="res://Scenes/coin.gd" id="1_058mv"]
 [ext_resource type="Texture2D" uid="uid://bieucio4ct83j" path="res://Sprites/coin3_16x16.png" id="1_jh635"]
+[ext_resource type="AudioStream" uid="uid://dvhtid4sil83c" path="res://Sounds/mixkit-achievement-completed-2068.wav" id="3_ivxqq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_spn40"]
 atlas = ExtResource("1_jh635")
@@ -152,7 +153,6 @@ script = ExtResource("1_058mv")
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_vay47")
 autoplay = "default"
-frame_progress = 0.243291
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_xmbtc")
@@ -162,5 +162,9 @@ libraries = {
 "": SubResource("AnimationLibrary_yv4xj")
 }
 autoplay = "default"
+
+[node name="Mixkit-achievement-completed-2068" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ivxqq")
+autoplay = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
