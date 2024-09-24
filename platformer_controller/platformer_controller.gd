@@ -334,3 +334,8 @@ func calculate_friction(time_to_max):
 ## Formula from [url]https://www.reddit.com/r/gamedev/comments/bdbery/comment/ekxw9g4/?utm_source=share&utm_medium=web2x&context=3[/url]
 func calculate_speed(p_max_speed, p_friction):
 	return (p_max_speed / p_friction) - p_max_speed
+
+
+func _on_kill_zone_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Player"):
+		get_tree().reload_current_scene()
